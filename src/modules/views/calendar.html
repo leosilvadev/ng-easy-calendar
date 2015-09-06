@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+<style>
+
+	div.calendar-header{
+		background-color: grey;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+
+	div.calendar-body{
+		background-color: green;
+		width: 100%;
+	}
+
+	div.calendar-day, div.calendar-day-label{
+		padding:10px;
+		width: 14%;
+		float: left;
+	}
+</style>
+
+<div ng-app="easyCalendar" ng-controller="EasyCalendarController" class="row">
+	<div>
+		<div class="calendar-header" ng-repeat="day in calendarHeader">
+			<div class="calendar-day-label">
+				{{day.label}}
+			</div>
+		</div>
+	</div>
+	<div class="calendar-body">
+		<div class="calendar-day" ng-repeat="day in days">
+			{{day | date}}
+		</div>
+	</div>
+</div>
