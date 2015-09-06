@@ -23,8 +23,8 @@
 
 <div ng-app="easyCalendar" ng-controller="EasyCalendarController" class="row">
 	<div>
-		<div class="calendar-header" ng-repeat="day in calendarHeader">
-			<div class="calendar-day-label">
+		<div class="calendar-header">
+			<div class="calendar-day-label" ng-repeat="day in calendarHeader">
 				{{day.label}}
 			</div>
 		</div>
