@@ -9,3 +9,13 @@ div.calendar-header>div.calendar-day:first-child {
 div.calendar-header>div.calendar-day:last-child {
   border-radius: 0px 10px 0px 0px;
 }
+
+
+
+div.invalid-date{
+  background-color: rgba(236, 240, 241, 0.36);
+}
+
+div.calendar-body>div.calendar-day:not(.invalid-date) {
+  cursor: pointer;
+}

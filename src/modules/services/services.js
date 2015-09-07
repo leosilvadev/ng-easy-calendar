@@ -3,10 +3,15 @@ angular.module('easyCalendar.services', []);
 angular.module('easyCalendar.services').factory('easyCalendarFactory', function(daysIn){
 
   return function(date){
-    var days = daysIn(date.getMonth(), date.getFullYear());
+    var days = daysIn(date.getMonth(), date.getFullYear()).map(function(date){
+      return {
+        date: date,
+        currentMonth: true
+      };
+    });
 
-    var firstMonthDay = days[0];
-    var lastMonthDay = days[days.length-1];
+    var firstMonthDay = days[0].date;
+    var lastMonthDay = days[days.length-1].date;
 
     var daysToGetBefore = firstMonthDay.getDay();
     var daysToGetAfter = 6 - lastMonthDay.getDay();
@@ -14,13 +19,19 @@ angular.module('easyCalendar.services').factory('easyCalendarFactory', function(
     var daysLastMonth = daysIn(date.getMonth()-1, date.getYear());
     var lastDaysLastMonth = [];
     while(lastDaysLastMonth.length!=daysToGetBefore){
-      lastDaysLastMonth.push( daysLastMonth.pop() );
+      lastDaysLastMonth.push( {
+        date: daysLastMonth.pop(),
+        currentMonth: false
+      } );
     }
 
     var daysNextMonth = daysIn(date.getMonth()+1, date.getYear()).reverse();
     var firstDaysNextMonth = [];
     while(firstDaysNextMonth.length!=daysToGetAfter){
-      firstDaysNextMonth.push( daysNextMonth.pop() );
+      firstDaysNextMonth.push( {
+        date: daysNextMonth.pop(),
+        currentMonth: false
+      } );
     }
 
     return lastDaysLastMonth.reverse().concat(days).concat(firstDaysNextMonth);
