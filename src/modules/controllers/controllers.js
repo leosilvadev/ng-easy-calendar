@@ -1,6 +1,6 @@
 angular.module('easyCalendar.controllers',[]);
 
-angular.module('easyCalendar.controllers').controller('EasyCalendarController', function($scope, daysIn, currentCalendar){
+angular.module('easyCalendar.controllers').controller('EasyCalendarController', function($scope, daysIn, easyCalendarFactory){
 
 	$scope.calendarHeader = [
 		{label:"Dom", value:0},
@@ -12,6 +12,6 @@ angular.module('easyCalendar.controllers').controller('EasyCalendarController', 
 		{label:"Sab", value:6}
 	];
 
-	$scope.days = currentCalendar();
+	$scope.days = easyCalendarFactory(new Date());
 
 });
