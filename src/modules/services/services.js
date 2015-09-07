@@ -23,7 +23,7 @@ angular.module('easyCalendar.services').factory('easyCalendarFactory', function(
       firstDaysNextMonth.push( daysNextMonth.pop() );
     }
 
-    return lastDaysLastMonth.concat(days).concat(firstDaysNextMonth);
+    return lastDaysLastMonth.reverse().concat(days).concat(firstDaysNextMonth);
   };
 
 });
