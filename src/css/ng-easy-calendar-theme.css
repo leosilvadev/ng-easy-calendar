@@ -1,0 +1,11 @@
+div.calendar-header>div.calendar-day{
+  background-color: #ecf0f1;
+}
+
+div.calendar-header>div.calendar-day:first-child {
+  border-radius: 10px 0px 0px 0px;
+}
+
+div.calendar-header>div.calendar-day:last-child {
+  border-radius: 0px 10px 0px 0px;
+}
