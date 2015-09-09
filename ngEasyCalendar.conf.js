@@ -19,8 +19,10 @@ module.exports = function(config) {
       'src/components/angular-mocks/angular-mocks.js',
       'src/modules/easyCalendarModule.js',
       'src/modules/services/*.js',
+      'src/modules/values/*.js',
       'src/modules/controllers/*.js',
       'src/modules/directives/*.js',
+      'src/modules/filters/*.js',
       'test/unit/*Spec.js'
     ],
 
