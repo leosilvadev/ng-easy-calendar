@@ -5,14 +5,23 @@
 <div ng-app="easyCalendar" ng-controller="EasyCalendarController" class="row">
 	<div>
 		<div class="calendar-header">
-			<div class="calendar-day" ng-repeat="day in calendarHeader">
+			<div class="calendar-day" ng-repeat="day in calendarWeekDays">
 				{{day.label}}
 			</div>
 		</div>
 	</div>
 	<div class="calendar-body">
-		<div class="calendar-day" ng-repeat="day in days" ng-class="{'invalid-date': !day.currentMonth}">
+		<div class="calendar-day" ng-repeat="day in calendar.days" ng-class="{'invalid-date': !day.currentMonth}">
 			{{day.date | date}}
 		</div>
+	</div>
+	<div class="calendar-footer">
+		<button type="button" class="btn btn-default btn-last-month" ng-click="goTo(calendar.previous)">
+			<i class="glyphicon glyphicon-menu-left" ng-bind="month(calendar.previous.getMonth()).name"></i>
+		</button>
+
+		<button type="button" class="btn btn-default btn-next-month" ng-click="goTo(calendar.next)">
+			<i class="glyphicon glyphicon-menu-right" ng-bind="month(calendar.next.getMonth()).name"></i>
+		</button>
 	</div>
 </div>

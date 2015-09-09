@@ -25,7 +25,8 @@ angular.module('easyCalendar.services').factory('easyCalendarFactory', function(
       } );
     }
 
-    var daysNextMonth = daysIn(date.getMonth()+1, date.getYear()).reverse();
+    var daysNextMonth = date.getMonth()==11 ? daysIn(0, date.getYear()+1).reverse() : daysIn(date.getMonth()+1, date.getYear()).reverse();
+
     var firstDaysNextMonth = [];
     while(firstDaysNextMonth.length!=daysToGetAfter){
       firstDaysNextMonth.push( {
@@ -34,7 +35,11 @@ angular.module('easyCalendar.services').factory('easyCalendarFactory', function(
       } );
     }
 
-    return lastDaysLastMonth.reverse().concat(days).concat(firstDaysNextMonth);
+    return {
+      previous: new Date(date.getFullYear(), date.getMonth()-1, 1),
+      days: lastDaysLastMonth.reverse().concat(days).concat(firstDaysNextMonth),
+      next: new Date(date.getFullYear(), date.getMonth()+1, 1)
+    };
   };
 
 });

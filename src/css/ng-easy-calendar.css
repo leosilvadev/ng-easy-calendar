@@ -5,6 +5,12 @@ div.calendar-header{
 
 div.calendar-body{
   width: 100%;
+  float: left;
+}
+
+div.calendar-footer{
+  width: 100%;
+  float: left;
 }
 
 div.calendar-day {
