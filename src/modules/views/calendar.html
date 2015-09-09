@@ -17,11 +17,11 @@
 	</div>
 	<div class="calendar-footer">
 		<button type="button" class="btn btn-default btn-last-month" ng-click="goTo(calendar.previous)">
-			<i class="glyphicon glyphicon-menu-left" ng-bind="month(calendar.previous.getMonth()).name"></i>
+			<i class="glyphicon glyphicon-menu-left" ng-bind="calendar.previous | month"></i>
 		</button>
 
 		<button type="button" class="btn btn-default btn-next-month" ng-click="goTo(calendar.next)">
-			<i class="glyphicon glyphicon-menu-right" ng-bind="month(calendar.next.getMonth()).name"></i>
+			<i class="glyphicon glyphicon-menu-right" ng-bind="calendar.next | month"></i>
 		</button>
 	</div>
 </div>
