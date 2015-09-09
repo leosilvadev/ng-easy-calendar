@@ -1,1 +1,1 @@
-angular.module('easyCalendar', ['easyCalendar.controllers', 'easyCalendar.services', 'easyCalendar.filters']);
+angular.module('easyCalendar', ['easyCalendar.services', 'easyCalendar.filters', 'easyCalendar.directives']);

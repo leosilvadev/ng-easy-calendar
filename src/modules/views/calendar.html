@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
 
-<div ng-app="easyCalendar" ng-controller="EasyCalendarController" class="row">
+<div ng-app="easyCalendar" class="row">
 	<div>
 		<div class="calendar-header">
 			<div class="calendar-day" ng-repeat="day in calendarWeekDays">
@@ -11,7 +11,8 @@
 		</div>
 	</div>
 	<div class="calendar-body">
-		<div class="calendar-day" ng-repeat="day in calendar.days" ng-class="{'invalid-date': !day.currentMonth}">
+		<div class="calendar-day" ng-repeat="day in calendar.days" ng-click="day.currentMonth && executeClickFunction(day)"
+			ng-class="{'invalid-date': !day.currentMonth}">
 			{{day.date | date}}
 		</div>
 	</div>

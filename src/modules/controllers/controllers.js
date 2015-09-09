@@ -8,6 +8,10 @@ angular.module('easyCalendar.controllers')
 		$scope.calendar = easyCalendarFactory(date);
 	};
 
+	$scope.executeClickFunction = function(day){
+		$scope.click({day: day});
+	};
+
 	$scope.goTo(new Date());
 
 });
