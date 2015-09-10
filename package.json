@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/karma start ngEasyCalendar.conf.js --browsers PhantomJS"
+    "test": "./node_modules/.bin/karma start ngEasyCalendar.conf.js --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
