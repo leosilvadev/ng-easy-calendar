@@ -72,6 +72,8 @@ module.exports = function(config) {
 
     preprocessors: {
       'src/modules/services/*.js' : 'coverage',
+      'src/modules/filters/*.js' : 'coverage',
+      'src/modules/values/*.js' : 'coverage',
       'src/modules/controllers/*.js' : 'coverage',
       'src/modules/directives/*.js' : 'coverage'
     },
