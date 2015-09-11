@@ -2,7 +2,7 @@
 
 describe('EasyCalendarController unit tests', function() {
 
-  var controller, scope;
+  var scope;
 
   beforeEach(module('easyCalendar.controllers'));
 
@@ -10,7 +10,7 @@ describe('EasyCalendarController unit tests', function() {
     scope = $rootScope.$new();
     scope.click = function(){};
 
-    controller = $controller('EasyCalendarController', {
+    $controller('EasyCalendarController', {
       $scope: scope,
       easyCalendarFactory: function(){}
     });
@@ -21,11 +21,12 @@ describe('EasyCalendarController unit tests', function() {
     it('should execute the click function passing the day that was clicked on', function(){
       var date = new Date();
       var day = {date: new Date()};
-      var clickFn = spyOn(scope, 'click');
+
+      spyOn(scope, 'click');
 
       scope.executeClickFunction(day);
 
-      expect(clickFn).toHaveBeenCalledWith({day: day});
+      expect(scope.click).toHaveBeenCalledWith({day: day});
     });
 
   });

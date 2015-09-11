@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Days In factory Test', function() {
 
   beforeEach(module('easyCalendar.services'));

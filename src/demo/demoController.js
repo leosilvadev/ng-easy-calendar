@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('easyCalendar.demo', ['easyCalendar']);
 
 angular.module('easyCalendar.demo').controller('DemoController', function($scope){

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('easyCalendar.directives', ['easyCalendar.controllers']);
 
 angular.module('easyCalendar.directives').directive('easyCalendar', function(){

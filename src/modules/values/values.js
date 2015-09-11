@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('easyCalendar.values', []);
 
 angular.module('easyCalendar.values')

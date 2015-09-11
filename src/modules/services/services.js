@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('easyCalendar.services', []);
 
 angular.module('easyCalendar.services').factory('easyCalendarFactory', function(daysIn){

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('easyCalendar.filters', ['easyCalendar.values']);
 
 angular.module('easyCalendar.filters').filter('month', function(calendarMonths) {
