@@ -1,8 +1,10 @@
-angular.module('easyCalendar.controllers', ['easyCalendar.values']);
+"use strict";
+
+angular.module('easyCalendar.controllers', []);
 
 angular.module('easyCalendar.controllers')
 	.controller('EasyCalendarController',
-	function($scope, daysIn, easyCalendarFactory, calendarMonths, calendarWeekDays){
+	function($scope, easyCalendarFactory){
 
 	$scope.goTo = function(date){
 		$scope.calendar = easyCalendarFactory(date);
