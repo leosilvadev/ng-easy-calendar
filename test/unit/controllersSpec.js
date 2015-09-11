@@ -1,6 +1,6 @@
 'use strict';
 
-describe('EasyCalendarController unit tests', function() {
+describe('Controllers unit tests', function() {
 
   var $scope;
 
