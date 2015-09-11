@@ -11,7 +11,7 @@ angular.module('easyCalendar.controllers')
 	};
 
 	$scope.executeClickFunction = function(day){
-		$scope.click({day: day});
+		$scope.click && $scope.click({day: day});
 	};
 
 	$scope.goTo(new Date());
