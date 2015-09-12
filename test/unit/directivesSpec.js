@@ -26,9 +26,20 @@ describe('Directives unit tests', function() {
 	 var element = angular.element("<easy-calendar click='clicking(day)'></easy-calendar>");
 
 	 $compile(element)($scope);
-
     $rootScope.$digest();
 
     expect(element[0].getElementsByClassName('day-label').length).toBe(35);
   });
+
+  it('should put the function for click correctly', function(){
+	 $scope.clicking = function(day){ return true };
+
+	 var element = angular.element("<easy-calendar click='clicking(day)'></easy-calendar>");
+
+	 $compile(element)($scope);
+	 $rootScope.$digest();
+
+	 expect(element.scope().$$childTail.click()).toBe(true);
+  });
+
 });
