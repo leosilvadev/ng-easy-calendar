@@ -13,7 +13,7 @@
 	<div class="calendar-body">
 		<div class="calendar-day" ng-repeat="day in calendar.days" ng-click="day.currentMonth && executeClickFunction(day)"
 			ng-class="{'invalid-date': !day.currentMonth}">
-			{{day.date | date}}
+			<span class="day-label" ng-bind="day.date | date"></span>
 		</div>
 	</div>
 	<div class="calendar-footer">

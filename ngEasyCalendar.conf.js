@@ -23,6 +23,7 @@ module.exports = function(config) {
       'src/modules/controllers/*.js',
       'src/modules/directives/*.js',
       'src/modules/filters/*.js',
+		'src/modules/views/*.html',
       'test/unit/*Spec.js'
     ],
 
@@ -31,12 +32,11 @@ module.exports = function(config) {
     exclude: [
     ],
 
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
+	 ngHtml2JsPreprocessor: {
+		stripPrefix: 'src/',
+		prependPrefix: '/',
+		moduleName: 'easyCalendar.templates'
+	 },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -75,13 +75,24 @@ module.exports = function(config) {
       'src/modules/filters/*.js' : 'coverage',
       'src/modules/values/*.js' : 'coverage',
       'src/modules/controllers/*.js' : 'coverage',
-      'src/modules/directives/*.js' : 'coverage'
+      'src/modules/directives/*.js' : 'coverage',
+		'src/modules/views/*.html' : 'ng-html2js'
     },
 
     coverageReporter: {
       type : 'lcov',
       dir : 'coverage/',
       subdir: '.'
-    }
-  })
+    },
+
+	plugins: [
+		'karma-jasmine',
+		'karma-chrome-launcher',
+		'karma-coverage',
+		'karma-coveralls',
+		'karma-ng-html2js-preprocessor'
+	 ],
+
+
+  });
 }

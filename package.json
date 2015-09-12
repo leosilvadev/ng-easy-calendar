@@ -26,6 +26,8 @@
     "karma-coverage": "^0.5.1",
     "karma-coveralls": "1.1.2",
     "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^0.3.4",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18"
   },
